@@ -14,9 +14,7 @@ import products from "../data/products";
 const ProductDetailsScreen = () => {
   const product = products[0];
   const { width } = useWindowDimensions();
-  const addToCart = () => {
-    console.warn("TES");
-  };
+  const addToCart = () => {};
 
   return (
     <View>

@@ -2,12 +2,14 @@ import { View, Text, Image, StyleSheet, FlatList } from "react-native";
 import React from "react";
 import ProductsScreen from "../screens/ProductsScreen";
 import ProductDetailsScreen from "../screens/ProductDetailsScreen";
+import ShoppingCart from "../screens/ShoppingCart";
 
 const Home = () => {
   return (
     <View>
       {/* <ProductsScreen /> */}
-      <ProductDetailsScreen />
+      {/* <ProductDetailsScreen /> */}
+      <ShoppingCart />
     </View>
   );
 };
