@@ -1,4 +1,4 @@
-export default [
+const cart = [
   {
     product: {
       id: "1",
@@ -32,4 +32,7 @@ export default [
     size: 44,
     quantity: 1,
   },
+  // Add more cart items if needed
 ];
+
+export default cart;

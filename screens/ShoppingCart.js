@@ -1,8 +1,7 @@
 import { View, Text, FlatList, StyleSheet, Pressable } from "react-native";
 import React from "react";
-import cart from "../data/cart";
 import CartListItem from "../components/CartListItem"; // Corrected the component name
-
+import cart from "../data/Cart";
 const ShoppingCart = () => {
   const ShoppingCartTotals = () => (
     <View style={styles.totalContainer}>
@@ -56,12 +55,10 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   button: {
-    position: "absolute",
     backgroundColor: "black",
-    bottom: -50,
-    width: "90%",
-    alignSelf: "center",
-    padding: 20,
+    marginLeft: 20, // Add some space between the text and the edge of the screen
+    paddingVertical: 20,
+    paddingHorizontal: 30,
     borderRadius: 100,
     alignItems: "center",
   },

@@ -11,7 +11,7 @@ import {
 import React from "react";
 import products from "../data/products";
 
-const ProductDetailsScreen = () => {
+const ProductDetails = () => {
   const product = products[0];
   const { width } = useWindowDimensions();
   const addToCart = () => {};
@@ -41,7 +41,7 @@ const ProductDetailsScreen = () => {
   );
 };
 
-export default ProductDetailsScreen;
+export default ProductDetails;
 
 const styles = StyleSheet.create({
   title: { fontSize: 34, fontWeight: "500", marginVertical: 10 },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   button: {
     position: "absolute",
     backgroundColor: "black",
-    bottom: 30,
+    bottom: 5,
     width: "90%",
     alignSelf: "center",
     padding: 20,
