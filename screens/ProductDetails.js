@@ -10,12 +10,17 @@ import {
 } from "react-native";
 import React from "react";
 import products from "../data/products";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cartSlice } from "../store/cartSlice";
 
 const ProductDetails = () => {
   const product = useSelector((state) => state.products.selectedProduct);
+  const dispatch = useDispatch();
   const { width } = useWindowDimensions();
-  const addToCart = () => {};
+
+  const addToCart = () => {
+    dispatch(cartSlice.actions.addCartItem({ product }));
+  };
 
   return (
     <View>
