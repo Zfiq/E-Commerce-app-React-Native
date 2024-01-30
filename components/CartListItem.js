@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { cartSlice } from "../store/cartSlice";
 import { useDispatch } from "react-redux";
+
 const CartListItem = ({ cartItem }) => {
   const dispatch = useDispatch();
 

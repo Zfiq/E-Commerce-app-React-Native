@@ -9,17 +9,24 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import products from "../data/products";
 import { useSelector, useDispatch } from "react-redux";
 import { cartSlice } from "../store/cartSlice";
-
+import Toast from "react-native-toast-message";
 const ProductDetails = () => {
   const product = useSelector((state) => state.products.selectedProduct);
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
 
-  const addToCart = () => {
-    dispatch(cartSlice.actions.addCartItem({ product }));
+  const addToCart = (itemAdded) => {
+    if (itemAdded) {
+      dispatch(cartSlice.actions.addCartItem({ product }));
+      Toast.show({
+        type: "success",
+        text1: product.name + " added to cart",
+        visibilityTime: 2000, // Seconds
+        autoHide: true,
+      });
+    }
   };
 
   return (
@@ -34,13 +41,14 @@ const ProductDetails = () => {
           showsHorizontalScrollIndicator={false}
           pagingEnabled
         />
+        <Toast />
         <View style={{ padding: 20 }}>
           <Text style={styles.title}>{product.name}</Text>
           <Text style={styles.price}>${product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable style={styles.button} onPress={addToCart}>
+      <Pressable style={styles.button} onPress={() => addToCart(product)}>
         <Text style={styles.buttonText}>Add to cart</Text>
       </Pressable>
     </View>
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     fontWeight: "300",
-    marginVertical: 10,
+    marginVertical: 50,
     lineHeight: 30,
   },
   button: {

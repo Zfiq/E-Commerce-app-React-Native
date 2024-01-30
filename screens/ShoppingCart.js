@@ -67,11 +67,11 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "black",
-    marginLeft: 20, // Add some space between the text and the edge of the screen
     paddingVertical: 20,
     paddingHorizontal: 30,
     borderRadius: 100,
     alignItems: "center",
+    bottom: 10,
   },
   buttonText: {
     color: "white",
